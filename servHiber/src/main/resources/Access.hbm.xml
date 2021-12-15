@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.example.Access" table="access">
+        <meta attribute="class-description">This class
+            contains developer's details.
+        </meta>
+        <id name="accessId" type="integer" column="access_id">
+            <generator class="native"/>
+        </id>
+        <property name="type" column="type" type="text"/>
+
+    </class>
+
+</hibernate-mapping>

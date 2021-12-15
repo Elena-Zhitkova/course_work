@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="650.0" style="-fx-background-color: #FFE401;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.client.MainPage">
+   <center>
+      <AnchorPane prefHeight="500.0" prefWidth="655.0" style="-fx-background-color: #FFE401;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="logout" layoutX="561.0" layoutY="549.0" mnemonicParsing="false" onAction="#userLogout" style="-fx-background-color: black;" text="Выйти" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font></Button>
+            <TabPane fx:id="generalTabPane" layoutX="16.0" layoutY="17.0" prefHeight="525.0" prefWidth="613.0" style="-fx-background-color: #f0d916; -fx-border-color: black;" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab fx:id="capitalTab" style="-fx-background-color: #FFE401;" text="Основные фонды">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="358.0" prefWidth="719.0">
+                           <children>
+                              <TableView fx:id="capitalTableView" prefHeight="311.0" prefWidth="613.0" style="-fx-border-color: black;">
+                                <columns>
+                                  <TableColumn fx:id="capitalName" prefWidth="220.6666774749756" text="Наименование" />
+                                  <TableColumn fx:id="capitalPrice" minWidth="0.0" prefWidth="149.9999542236328" text="Стоимость (бел. руб.)" />
+                                    <TableColumn fx:id="capitalUsefullLife" minWidth="-Infinity" prefWidth="237.33328247070312" text="Срок полезного использования (лет)" />
+                                </columns>
+                              </TableView>
+                              <Button fx:id="addCapitalButton" layoutX="14.0" layoutY="321.0" mnemonicParsing="false" onAction="#addCapital" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: black;" text="Добавить" textFill="WHITE" />
+                              <Button fx:id="deleteCapitalButton" layoutX="14.0" layoutY="423.0" mnemonicParsing="false" onAction="#deleteCapital" prefWidth="171.0" style="-fx-background-color: black;" text="Удалить выбранную строку" textFill="WHITE" />
+                              <Button fx:id="updateCapitalButton" layoutX="112.0" layoutY="321.0" mnemonicParsing="false" onAction="#updateCapital" prefWidth="80.0" style="-fx-background-color: black;" text="Изменить" textFill="WHITE" />
+                              <TextField fx:id="nameCapitalTextField" layoutX="15.0" layoutY="353.0" promptText="Наименование" style="-fx-border-color: black;" />
+                              <TextField fx:id="priceCapitalTextField" layoutX="393.0" layoutY="353.0" prefHeight="28.0" prefWidth="187.0" promptText="Срок полезного использования" style="-fx-border-color: black;" />
+                              <TextField fx:id="usefullLifeCapitalTextField" layoutX="208.0" layoutY="353.0" prefHeight="28.0" prefWidth="143.0" promptText="Стоимость" style="-fx-border-color: black;" />
+                              <Label fx:id="errorLabel" layoutX="15.0" layoutY="459.0" prefHeight="30.0" prefWidth="583.0" textFill="RED">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="successLabel" layoutX="15.0" layoutY="459.0" prefHeight="30.0" prefWidth="585.0" textFill="#0f7916">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="chooseButton" layoutX="15.0" layoutY="391.0" mnemonicParsing="false" onAction="#choose" style="-fx-background-color: black;" text="Выбрать строку для редактирования" textFill="WHITE" />
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+                <Tab fx:id="amortizationTab" style="-fx-background-color: #FFE401;" text="Амортизация">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="amortizationTableView" prefHeight="393.0" prefWidth="610.0" style="-fx-border-color: black;">
+                                <columns>
+                                  <TableColumn fx:id="capitalNameAmort" prefWidth="155.0" text="Наименование" />
+                                  <TableColumn fx:id="yearPerAmort" prefWidth="123.0" text="Годовой процент" />
+                                    <TableColumn fx:id="yearCostAmort" prefWidth="94.0" text="Годовая цена" />
+                                    <TableColumn fx:id="monthPerAmort" prefWidth="127.0" text="Месячный процент" />
+                                    <TableColumn fx:id="monthCostAmort" prefWidth="106.0" text="Месячная цена" />
+                                </columns>
+                              </TableView>
+                              <Button fx:id="doChartButton" layoutX="432.0" layoutY="404.0" mnemonicParsing="false" onAction="#doChart" style="-fx-background-color: black;" text="Построить диаграмму" textFill="WHITE" />
+                              <Button layoutX="477.0" layoutY="445.0" mnemonicParsing="false" onAction="#createReport" style="-fx-background-color: black;" text="Создать отчет" textFill="WHITE" />
+                              <Label fx:id="errorLabelAmort" layoutX="310.0" layoutY="299.0" prefHeight="17.0" prefWidth="287.0" textFill="RED">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="successLabelAmort1" layoutX="310.0" layoutY="308.0" prefHeight="17.0" prefWidth="287.0" textFill="#0ebc04">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab fx:id="usersTab" style="-fx-background-color: #FFE401;" text="Пользователи">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="usersTableView" layoutX="1.0" prefHeight="307.0" prefWidth="610.0" style="-fx-border-color: black;">
+                                <columns>
+                                  <TableColumn fx:id="usersLogin" prefWidth="132.0" text="Логин" />
+                                  <TableColumn fx:id="usersPassword" prefWidth="168.0" text="Пароль" />
+                                    <TableColumn fx:id="usersAccess" prefWidth="166.0" text="Уровень доступа" />
+                                    <TableColumn fx:id="usersStatus" prefWidth="138.0" text="Статус" />
+                                </columns>
+                              </TableView>
+                              <Button fx:id="delUserButton" layoutX="16.0" layoutY="362.0" mnemonicParsing="false" onAction="#delUser" style="-fx-background-color: black;" text="Удалить выбранного пользователя" textFill="WHITE" />
+                              <Button fx:id="changeStatusButton" layoutX="14.0" layoutY="399.0" mnemonicParsing="false" onAction="#changeStatus" style="-fx-background-color: black;" text="Изменить статус выбранного пользователя" textFill="WHITE" />
+                              <Button fx:id="addUserButton" layoutX="16.0" layoutY="322.0" mnemonicParsing="false" onAction="#addUser" style="-fx-background-color: black;" text="Добавить" textFill="WHITE" />
+                              <TextField fx:id="loginTextField" layoutX="101.0" layoutY="322.0" promptText="Логин" style="-fx-border-color: black;" />
+                              <TextField fx:id="accessTextField" layoutX="438.0" layoutY="321.0" promptText="Уровень доступа" style="-fx-border-color: black;" />
+                              <TextField fx:id="passwordTextField" layoutX="269.0" layoutY="321.0" promptText="Пароль" style="-fx-border-color: black;" />
+                              <Label fx:id="errorUsers" layoutX="16.0" layoutY="447.0" prefHeight="17.0" prefWidth="574.0" textFill="RED">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font></Label>
+                              <Label fx:id="successUsers" layoutX="19.0" layoutY="456.0" prefHeight="17.0" prefWidth="574.0" textFill="#0fab04">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font></Label>
+                           </children></AnchorPane>
+                     </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

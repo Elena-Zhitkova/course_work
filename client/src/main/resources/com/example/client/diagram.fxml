@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #FFE401;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.client.Diagram">
+   <children>
+      <Label layoutX="136.0" layoutY="14.0" prefHeight="25.0" prefWidth="316.0" style="-fx-background-color: black;" text="Диаграмма годовой стоимости амортизации" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <PieChart fx:id="pieChart" layoutX="35.0" layoutY="45.0" prefHeight="302.0" prefWidth="517.0" />
+      <Button layoutX="247.0" layoutY="355.0" mnemonicParsing="false" onAction="#okAction" prefHeight="9.0" prefWidth="107.0" style="-fx-background-color: black;" text="OK" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.example.Amortization" table="amortization">
+        <meta attribute="class-description">This class
+            contains developer's details.
+        </meta>
+        <id name="amortizationId" type="integer" column="amortization_id">
+            <generator class="native"/>
+        </id>
+        <property name="monthCostAmort" column="month_cost_amort" type="double"/>
+        <property name="monthPerAmort" column="month_per_amort" type="double"/>
+        <property name="yearCostAmort" column="year_cost_amort" type="double"/>
+        <property name="yearPerAmort" column="year_per_amort" type="double"/>
+        <property name="capital" column="capital" type="integer"/>
+    </class>
+
+</hibernate-mapping>
