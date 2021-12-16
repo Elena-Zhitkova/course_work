@@ -1,0 +1,192 @@
+@startuml
+
+title __CLIENT's Class Diagram__\n
+
+  namespace  {
+    namespace om.example.client {
+      class com.example.client.Amortization {
+          - capitalName : String
+          - monthCostAmort : double
+          - monthPerAmort : double
+          - yearCostAmort : double
+          - yearPerAmort : double
+          + Amortization()
+          + Amortization()
+          {static} + getAmortization()
+          + getCapital()
+          + getCapitalName()
+          + getMonthCostAmort()
+          + getMonthPerAmort()
+          + getYearCostAmort()
+          + getYearPerAmort()
+          + setCapital()
+          + setCapitalName()
+          + setMonthCostAmort()
+          + setMonthPerAmort()
+          + setYearCostAmort()
+          + setYearPerAmort()
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example.client {
+      class com.example.client.Capital {
+          - capitalId : int
+          - capitalName : String
+          - capitalPrice : double
+          - usefullLife : Integer
+          + Capital()
+          + Capital()
+          {static} + getCapital()
+          + getCapitalId()
+          + getCapitalName()
+          + getCapitalPrice()
+          + getUsefullLife()
+          + setCapitalId()
+          + setCapitalName()
+          + setCapitalPrice()
+          + setUsefullLife()
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example.client {
+      class com.example.client.Diagram {
+          - pieChart : PieChart
+          + initialize()
+          + okAction()
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example.client {
+      class com.example.client.Login {
+          ~ signupButton : Button
+          - loginButton : Button
+          - password : PasswordField
+          - username : TextField
+          - wrongLogin : Label
+          + Login()
+          + UserLogin()
+          + UserSignup()
+          - checkLogin()
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example.client {
+      class com.example.client.MainClient {
+          {static} + socket : Socket
+          {static} - stg : Stage
+          + changeScene()
+          {static} + main()
+          + start()
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example.client {
+      class com.example.client.MainPage {
+          {static} + access : int
+          + oldRes : String
+          - accessTextField : TextField
+          - addCapitalButton : Button
+          - addUserButton : Button
+          - amortizationTab : Tab
+          - amortizationTableView : TableView<Amortization>
+          - capitalName : TableColumn<Capital, String>
+          - capitalNameAmort : TableColumn<Amortization, String>
+          - capitalPrice : TableColumn<Capital, Double>
+          - capitalTab : Tab
+          - capitalTableView : TableView<Capital>
+          - capitalUsefullLife : TableColumn<Capital, Integer>
+          - chooseButton : Button
+          - deleteCapitalButton : Button
+          - errorLabel : Label
+          - errorUsers : Label
+          - generalTabPane : TabPane
+          - loginTextField : TextField
+          - logout : Button
+          - monthCostAmort : TableColumn<Amortization, Double>
+          - monthPerAmort : TableColumn<Amortization, Double>
+          - nameCapitalTextField : TextField
+          - passwordTextField : TextField
+          - priceCapitalTextField : TextField
+          - successLabel : Label
+          - successUsers : Label
+          - updateCapitalButton : Button
+          - usefullLifeCapitalTextField : TextField
+          - usersAccess : TableColumn<Users, String>
+          - usersLogin : TableColumn<Users, String>
+          - usersPassword : TableColumn<Users, String>
+          - usersStatus : TableColumn<Users, String>
+          - usersTab : Tab
+          - usersTableView : TableView<Users>
+          - yearCostAmort : TableColumn<Amortization, Double>
+          - yearPerAmort : TableColumn<Amortization, Double>
+          + addCapital()
+          + addUser()
+          + changeStatus()
+          + choose()
+          + createReport()
+          + delUser()
+          + deleteCapital()
+          + doChart()
+          + initialize()
+          + tableViewAmortizationWriter()
+          + tableViewUsersWriter()
+          + tableViewWriter()
+          + updateCapital()
+          + userLogout()
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example.client {
+      class com.example.client.Users {
+          - access : String
+          - login : String
+          - password : String
+          - status : String
+          + Users()
+          + Users()
+          + getAccess()
+          + getLogin()
+          + getPassword()
+          + getStatus()
+          {static} + getUsers()
+          + setAccess()
+          + setLogin()
+          + setPassword()
+          + setStatus()
+          + toString()
+      }
+    }
+  }
+  
+
+  com.example.client.Diagram .up.|> javafx.fxml.Initializable
+  com.example.client.MainClient -up-|> javafx.application.Application
+  com.example.client.MainPage .up.|> javafx.fxml.Initializable
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

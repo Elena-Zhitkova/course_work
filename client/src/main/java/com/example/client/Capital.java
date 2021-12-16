@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.net.Inet4Address;
 
 public class Capital {
-    private int capitalId;
     private String capitalName;
     private double capitalPrice;
     private Integer usefullLife;
@@ -36,16 +35,8 @@ public class Capital {
         this.usefullLife = usefullLife;
     }
 
-    public int getCapitalId() {
-        return capitalId;
-    }
-
     public double getCapitalPrice() {
         return capitalPrice;
-    }
-
-    public void setCapitalId(int capitalId) {
-        this.capitalId = capitalId;
     }
 
     public int getUsefullLife() {
